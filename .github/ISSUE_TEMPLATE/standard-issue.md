@@ -1,3 +1,4 @@
+---
 name: 'Standard Issue '
 about: Template for a standard issue
 title: ''
