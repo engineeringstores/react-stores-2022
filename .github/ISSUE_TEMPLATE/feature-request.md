@@ -1,15 +1,11 @@
 ---
-name: 'Standard Issue '
-about: Template for a standard issue
-title: ''
-labels: ''
-assignees: ''
-
+name: 'Feature Request'
+about: Submit a feature request
 ---
 
 ## **Description:**
 
-Describe the general demands of the issue.
+Describe the general demands.
 
 ## **Requirements:**
 
@@ -19,7 +15,7 @@ Describe the general demands of the issue.
 
 ## **External Factors:**
 
-Describe any external requirements that might effect the issue (e.g need to await information from other subcomm).
+Describe any external requirements that might effect the issue (e.g need to await information from other party).
 
 ## **Related Issues/PRs:**
 
