@@ -1,15 +1,19 @@
 ---
-name: Feature Request
-about: Submit a feature request
+name: Frontend Issue
+about: Submit an issue regarding the appearance and visuals
 title: ''
-labels: ''
-assignees: Freeassassin, natapokie
+labels: frontend
+assignees: natapokie
 
 ---
 
-## **Description:**
+## **Changes:**
 
-Describe the general demands.
+Describe the visual changed required.
+
+## **Visuals:**
+
+Any visuals that are related to these changes
 
 ## **Requirements:**
 

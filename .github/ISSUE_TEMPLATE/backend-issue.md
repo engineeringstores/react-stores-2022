@@ -1,15 +1,15 @@
 ---
-name: Feature Request
-about: Submit a feature request
+name: Backend Issue
+about: Submit an issue regarding the server and API
 title: ''
-labels: ''
-assignees: Freeassassin, natapokie
+labels: backend
+assignees: Freeassassin
 
 ---
 
-## **Description:**
+## **Expected Behavior:**
 
-Describe the general demands.
+Describe the expected behavior the backend should be able to demonstrate.
 
 ## **Requirements:**
 
