@@ -1,5 +1,5 @@
 # University of Toronto Engineering Stores React Website
-This is repository contains the react web application for the Engineering Stores website. For a full guild on the tech stack please refer to the [2022 react web stores guild](https://docs.google.com/document/d/e/2PACX-1vQ8exQgkFiQJSUaVKl6TAo1B6AWj3MqXNRW5lSM3QZcPWXvIJuodO-asDeaMMxUWofUaCSMJpxat5ww/pub).
+This is repository contains the react web application for the Engineering Stores website. For a full guild on the tech stack please refer to the [2022 react web stores handbook](https://docs.google.com/document/d/e/2PACX-1vQ8exQgkFiQJSUaVKl6TAo1B6AWj3MqXNRW5lSM3QZcPWXvIJuodO-asDeaMMxUWofUaCSMJpxat5ww/pub).
 
 ## Tech Stack
 * React.js
