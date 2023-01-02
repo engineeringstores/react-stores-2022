@@ -1,6 +1,9 @@
 //import { Page404 } from '../pages/404/404';
 import { PageAbout } from '../pages/about/about';
+import { PageCollections } from '../pages/collections/collections';
+import { PageConsignment } from '../pages/consignment/consignment';
 import { PageHome } from '../pages/home/home';
+import { PageShop } from '../pages/shop/shop';
 //import AuthorizedPage from './AuthorizedPage';
 
 export const pages = {
@@ -20,6 +23,33 @@ export const pages = {
       component: <PageAbout />,
       path: '/about',
       includeFooter: true,
+    },
+  ],
+  navbar: [
+    {
+      label: 'Shop',
+      component: <PageShop />,
+      path: '/about',
+    },
+    {
+      label: 'Collections',
+      component: <PageCollections />,
+      path: '/about',
+    },
+    {
+      label: 'Consignment',
+      component: <PageConsignment />,
+      path: '/about',
+    },
+    {
+      label: 'About',
+      component: <PageAbout />,
+      path: '/about',
+    },
+    {
+      label: 'Search',
+      component: <></>,
+      path: '/about',
     },
   ],
   special: [],

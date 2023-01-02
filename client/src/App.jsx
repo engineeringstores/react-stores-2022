@@ -5,7 +5,7 @@ import { pages } from './util/pages';
 import { Navbar } from './components/navbar/navbar';
 import { Footer } from './components/footer/footer';
 import { PageHome } from './pages/home/home';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -18,7 +18,8 @@ function App() {
 const TransitionRoutes = () => {
   const location = useLocation();
   return (
-    <PageHome />
+    <Navbar />
+    //<PageHome />
     // <TransitionGroup>
     //   <Navbar />
     //   <ScrollToTop />

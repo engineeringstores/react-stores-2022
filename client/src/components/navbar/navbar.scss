@@ -1,0 +1,61 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--padding);
+  background-color: var(--white);
+}
+
+.navbar-logo {
+  height: 55px;
+}
+
+.navbar-search {
+  height: 20px;
+}
+
+.navbar-container-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-link-container {
+  margin: 0 10px;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    .navbar-underline {
+      opacity: 100%;
+      transform: scaleX(100%);
+      transition: opacity, transform 500ms;
+    }
+  }
+}
+
+.navbar-link-text {
+  color: var(--dark-text);
+  padding: 8px 0;
+}
+
+.navbar-underline {
+  background-color: var(--dark-purple);
+  height: 1px;
+  width: 100%;
+  opacity: 0%;
+  transform: scaleX(0);
+  transform-origin: 0;
+  transition: opacity, transform 500ms; // animation is not "undoing itself"
+}
