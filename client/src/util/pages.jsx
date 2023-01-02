@@ -1,12 +1,12 @@
-import { Page404 } from '../pages/404/404';
-import { PageAbout } from '../pages/About/About';
-import { PageHome } from '../pages/Home/Home';
-import AuthorizedPage from './AuthorizedPage';
+//import { Page404 } from '../pages/404/404';
+import { PageAbout } from '../pages/about/about';
+import { PageHome } from '../pages/home/home';
+//import AuthorizedPage from './AuthorizedPage';
 
 export const pages = {
   404: {
     label: '404',
-    component: <Page404 />,
+    //component: <Page404 />,
   },
   main: [
     {
