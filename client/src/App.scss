@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica';
+}
+
+html {
+  background-color: var(--page-bg);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --white: #ffffff;
+  --page-bg: #efefef;
+
+  --dark-text: #222222;
+  --dark-purple: #282561;
+  --body-text: #333333;
+  --light-blue: #a6b3db;
+  --light-purple: #c6bcd5;
+
+  --padding: 0 5%;
+}
+
+/* font imports */
+
+@font-face {
+  font-family: 'Lovelo';
+  font-style: normal;
+  src: url('./fonts/Lovelo.otf');
+}
+
+@font-face {
+  font-family: 'Lovelo-Black';
+  font-style: normal;
+  src: url('./fonts/Lovelo-Black.otf');
+}
+
+@font-face {
+  font-family: 'OpenSans-Medium';
+  font-style: normal;
+  src: url('./fonts/OpenSans-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  font-style: normal;
+  src: url('./fonts/OpenSans-SemiBold.ttf');
+}
+
+h1 {
+  font-family: 'Lovelo-Black', sans-serif;
+}
+
+h2 {
+  font-family: 'OpenSans-SemiBold', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+h3,
+h4,
+h5 {
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  font-family: 'Inter-Bold', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+// #root {
+//   max-width: 1280px;
+//   margin: 0 auto;
+//   padding: 2rem;
+//   text-align: center;
+// }
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
