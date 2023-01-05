@@ -36,16 +36,12 @@ const ShopifyServices = {
             hasNextPage
             hasPreviousPage
           }
-          edges {
-            node {
-              id
-              productType
-              collections(first: 30) {
-                edges {
-                  node {
-                    title
-                  }
-                }
+          nodes {
+            id
+            productType
+            collections(first: 30) {
+              nodes {
+                title
               }
             }
           }
@@ -67,26 +63,22 @@ const ShopifyServices = {
           title
           totalInventory
           images(first: 250) {
-            edges {
-              node {
-                id
-                width
-                height
-                url
-              }
-            }
+            nodes {
+              id
+              width
+              height
+              url
+            } 
           }
           productType
           tags
           variants(first: 250) {
-            edges {
-              node {
-                id
-                title
-                quantityAvailable
-                price {
-                  amount
-                }
+            nodes {
+              id
+              title
+              quantityAvailable
+              price {
+                amount
               }
             }
           }

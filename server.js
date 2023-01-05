@@ -15,6 +15,7 @@ const corsOptions = {
     process.env.API_BASE_URL,
     "https://u-of-t-engineering-stores.myshopify.com/",
     "https://www.stores.skule.ca",
+    "https://www.react.stores.skule.ca",
   ],
 };
 
