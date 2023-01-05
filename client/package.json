@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
-    "build:beta": "VITE_API_BASE_URL=https://api.beta.orientation.skule.ca vite build",
+    "build:beta": "VITE_API_BASE_URL=https://react.skule.ca/api vite build",
     "preview": "vite preview",
     "lint": "eslint src",
     "format": "prettier --write \"**/*.+(js|jsx|css|scss|json)\"",
