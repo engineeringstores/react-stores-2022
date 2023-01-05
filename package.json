@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start:dev": "concurrently \" yarn start:dev\" \"cd client && yarn dev\"",
+        "start:dev": "concurrently \"nodemon ./server.js localhost 8080\" \"cd client && yarn dev\"",
         "prepare": "husky install"
     },
     "keywords": [],

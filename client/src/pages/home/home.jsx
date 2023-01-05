@@ -20,11 +20,7 @@ const PageHome = () => {
     dispatch(getCollections());
     dispatch(getProducts({ collectionID: '271215198417' }));
   }, []);
-  // useEffect(() => {
-  //   console.log(products);
-  //   console.log(collections);
-  //   console.log(product);
-  // }, [products, collections, product]);
+
   return (
     <>
       <div style={{ backgroundColor: 'red' }}>
