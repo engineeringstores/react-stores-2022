@@ -38,10 +38,17 @@
 
   &:hover {
     .navbar-underline {
-      opacity: 100%;
-      transform: scaleX(100%);
-      transition: opacity, transform 500ms;
+      background-color: var(--dark-purple);
+      //transform: scaleX(100%);
+      transition: background-color var(--transition-middling);
+      //transition: transform 500ms;
     }
+  }
+
+  .navbar-underline {
+    background-color: var(--white);
+    //transform: scaleX(0);
+    transition: background-color var(--transition-middling);
   }
 }
 
@@ -51,11 +58,11 @@
 }
 
 .navbar-underline {
-  background-color: var(--dark-purple);
   height: 1px;
   width: 100%;
-  opacity: 0%;
-  transform: scaleX(0);
   transform-origin: 0;
-  transition: opacity, transform 500ms; // animation is not "undoing itself"
+  //opacity: 0%;
+  //   transform: scaleX(0);
+  //   transform-origin: 0;
+  //transition: opacity, transform 500ms; // animation is not "undoing itself"
 }
