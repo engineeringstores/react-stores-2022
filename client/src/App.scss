@@ -17,10 +17,12 @@ html {
   --page-bg: #efefef;
 
   --dark-text: #222222;
+  --grey: #7a7a7a;
   --dark-purple: #282561;
   --body-text: #333333;
   --light-blue: #a6b3db;
   --light-purple: #c6bcd5;
+  --light-purple-transparent: #c6bcd540;
 
   --padding: 0 5%;
 
@@ -67,6 +69,8 @@ h1 {
 }
 
 h2 {
+  font-size: 20px;
+  font-weight: 600;
   font-family: 'OpenSans-SemiBold', sans-serif;
   margin: 0px;
   padding: 0px;
@@ -80,15 +84,23 @@ h5 {
   padding: 0px;
 }
 
+h3 {
+  font-size: 14px;
+  font-weight: 400;
+}
+h4 {
+  color: var(--grey);
+}
+
 p {
   font-family: 'Inter-Bold', sans-serif;
   margin: 0px;
   padding: 0px;
 }
 
-h3 {
-  font-size: 16px;
-}
+// h3 {
+//   font-size: 16px;
+// }
 
 // #root {
 //   max-width: 1280px;

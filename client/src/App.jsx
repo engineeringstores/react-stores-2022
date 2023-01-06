@@ -18,7 +18,13 @@ function App() {
 const TransitionRoutes = () => {
   const location = useLocation();
   return (
-    <Navbar />
+    <>
+      <Navbar />
+      <div style={{ position: 'absolute', width: '100%', height: '200%' }}>
+        <PageHome />
+      </div>
+    </>
+
     //<PageHome />
     // <TransitionGroup>
     //   <Navbar />

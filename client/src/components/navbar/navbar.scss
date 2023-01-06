@@ -1,9 +1,18 @@
+.navbar-container-dropdown {
+  // position: fixed;
+  // //@debug: block;
+  // z-index: 20;
+  // height: fit-content;
+  // width: fit-content;
+}
+
 .navbar-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 60px;
+  z-index: 21;
 
   display: flex;
   flex-direction: row;
@@ -19,7 +28,7 @@
 }
 
 .navbar-search {
-  height: 20px;
+  height: 16px;
 }
 
 .navbar-container-links {
@@ -65,4 +74,120 @@
   //   transform: scaleX(0);
   //   transform-origin: 0;
   //transition: opacity, transform 500ms; // animation is not "undoing itself"
+}
+
+////////////////////////////////////////
+
+.shop-container-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 19;
+  background-color: var(--light-purple-transparent);
+  //backdrop-filter: blur(8px);
+
+  transition: opacity, background-color var(--transition-middling);
+}
+
+.shop-container {
+  width: 100%;
+  height: 285px;
+  position: fixed;
+  // z-index: 20;
+  transform-origin: top;
+
+  padding: var(--padding);
+  padding-top: 90px;
+  padding-bottom: 30px;
+
+  background-color: var(--white);
+
+  // animation-name: shop-open;
+  // animation-duration: var(--transition-middling);
+}
+
+.shop-open {
+  opacity: 100%;
+  transition: opacity var(--transition-middling);
+
+  .shop-container {
+    animation-name: shop-open;
+    animation-duration: var(--transition-middling);
+  }
+}
+
+.shop-close {
+  z-index: -10;
+  display: unset;
+  opacity: 0%;
+
+  transition: opacity var(--transition-middling);
+
+  .shop-container {
+    animation-name: shop-close;
+    animation-duration: var(--transition-middling);
+  }
+}
+
+@keyframes shop-open {
+  from {
+    transform: scaleY(0);
+    opacity: 0%;
+  }
+  to {
+    transform: scaleY(100%);
+    opacity: 100%;
+  }
+}
+
+@keyframes shop-close {
+  from {
+    transform: scaleY(100%);
+    opacity: 100%;
+  }
+  to {
+    transform: scaleY(0);
+    opacity: 0%;
+    //display: unset;
+  }
+}
+
+.shop-categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.shop-category-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-category-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  color: var(--dark-purple);
+}
+
+.shop-category-text-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.shop-category-text-column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.shop-category-text {
+  padding: 1px 0;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--dark-purple);
+  }
 }
