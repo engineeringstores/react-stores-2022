@@ -133,6 +133,13 @@
     animation-name: shop-close;
     animation-duration: var(--transition-middling);
   }
+
+  .shop-container-bg {
+    animation-name: shop-close;
+    animation-duration: var(--transition-middling);
+    opacity: 0%;
+    display: unset;
+  }
 }
 
 @keyframes shop-open {
