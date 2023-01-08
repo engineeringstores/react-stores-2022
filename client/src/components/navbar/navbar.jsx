@@ -119,14 +119,18 @@ const ShopDropDown = ({ open }) => {
                   {shop.map((category) => {
                     return (
                       <>
-                        <div className="shop-category-container">
+                        <div key={category.label} className="shop-category-container">
                           <h2 className="shop-category-title">{category.label.toUpperCase()}</h2>
 
                           <div className="shop-category-text-row">
                             <div className="shop-category-text-column">
                               {category.items.map((item, i) => {
                                 if (i < 5) {
-                                  return <h4 className="shop-category-text">{item}</h4>;
+                                  return (
+                                    <h4 key={item} className="shop-category-text">
+                                      {item}
+                                    </h4>
+                                  );
                                 }
                               })}
                             </div>
@@ -134,7 +138,11 @@ const ShopDropDown = ({ open }) => {
                               <div className="shop-category-text-column">
                                 {category.items.map((item, i) => {
                                   if (i >= 5) {
-                                    return <h4 className="shop-category-text">{item}</h4>;
+                                    return (
+                                      <h4 key={item} className="shop-category-text">
+                                        {item}
+                                      </h4>
+                                    );
                                   }
                                 })}
                               </div>
