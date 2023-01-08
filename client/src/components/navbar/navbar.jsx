@@ -5,9 +5,11 @@ import './navbar.scss';
 
 import HorizontalLogo from '../../assets/logo/es-horizontal-logo.svg';
 import SearchIcon from '../../assets/icons/magnifying-glass-solid.svg';
+import XIcon from '../../assets/icons/xmark-solid.svg';
 
 const Navbar = () => {
   const [shopOpen, setShopOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   const pages = ['shop', 'collections', 'consignment', 'about us', 'Search'];
 
@@ -17,36 +19,61 @@ const Navbar = () => {
         <div className="navbar-container">
           <img className="navbar-logo" src={HorizontalLogo} />
 
-          <div className="navbar-container-links">
-            {pages.map((item) => {
-              if (item == 'Search') {
-                return (
-                  <div key={item} className="navbar-link-container" style={{ marginRight: 0 }}>
-                    <img className="navbar-search" src={SearchIcon} />
-                  </div>
-                );
-              } else {
-                return (
-                  <>
+          {searchOpen ? (
+            <>
+              <div className="search-container">
+                <img className="navbar-search search-bar-icon" src={SearchIcon} />
+                <input type="text" className="navbar-search-bar" placeholder="Search..." />
+                <img
+                  className="search-bar-close-icon"
+                  src={XIcon}
+                  onClick={() => {
+                    setSearchOpen(!searchOpen);
+                    setShopOpen(false);
+                  }}
+                />
+              </div>
+            </>
+          ) : (
+            <div className="navbar-container-links">
+              {pages.map((item) => {
+                if (item == 'Search') {
+                  return (
                     <div
                       key={item}
                       className="navbar-link-container"
+                      style={{ marginRight: 0 }}
                       onClick={() => {
-                        item == 'shop'
-                          ? shopOpen
-                            ? setShopOpen(false)
-                            : setShopOpen(true)
-                          : setShopOpen(false);
+                        setSearchOpen(!searchOpen);
+                        setShopOpen(false);
                       }}
                     >
-                      <h3 className="navbar-link-text">{item.toUpperCase()}</h3>
-                      <div className="navbar-underline"></div>
+                      <img className="navbar-search" src={SearchIcon} />
                     </div>
-                  </>
-                );
-              }
-            })}
-          </div>
+                  );
+                } else {
+                  return (
+                    <>
+                      <div
+                        key={item}
+                        className="navbar-link-container"
+                        onClick={() => {
+                          item == 'shop'
+                            ? shopOpen
+                              ? setShopOpen(false)
+                              : setShopOpen(true)
+                            : setShopOpen(false);
+                        }}
+                      >
+                        <h3 className="navbar-link-text">{item.toUpperCase()}</h3>
+                        <div className="navbar-underline"></div>
+                      </div>
+                    </>
+                  );
+                }
+              })}
+            </div>
+          )}
         </div>
         <ShopDropDown open={shopOpen} />
       </div>
@@ -120,10 +147,6 @@ const ShopDropDown = ({ open }) => {
                     );
                   })}
                 </>
-                {/*  */}
-                <></>
-                {/*  */}
-                <></>
               </div>
             </div>
           </div>
