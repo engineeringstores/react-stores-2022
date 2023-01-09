@@ -13,7 +13,7 @@ import XIcon from '../../assets/icons/xmark-solid.svg';
 const Navbar = () => {
   const [shopOpen, setShopOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const pathname = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <>
@@ -69,7 +69,10 @@ const Navbar = () => {
                       }}
                     >
                       <h3 className="navbar-link-text">{item.label.toUpperCase()}</h3>
-                      <div className="navbar-underline"></div>
+                      <div
+                        className="navbar-underline"
+                        style={shopOpen ? { backgroundColor: 'var(--dark-purple)' } : {}}
+                      ></div>
                     </div>
                   );
                 } else {
@@ -78,13 +81,17 @@ const Navbar = () => {
                       <Link
                         to={pathname === item.path ? {} : item.path}
                         key={item.path}
-                        style={pathname === item.path ? { pointerEvents: 'none' } : {}}
+                        style={
+                          pathname === item.path
+                            ? { pointerEvents: 'none', cursor: 'context-menu' }
+                            : {}
+                        }
                       >
                         <div
                           key={item.label}
                           className="navbar-link-container"
                           onClick={() => {
-                            item.label === 'shop'
+                            item.label === 'Shop'
                               ? shopOpen
                                 ? setShopOpen(false)
                                 : setShopOpen(true)
@@ -92,7 +99,14 @@ const Navbar = () => {
                           }}
                         >
                           <h3 className="navbar-link-text">{item.label.toUpperCase()}</h3>
-                          <div className="navbar-underline"></div>
+                          <div
+                            className="navbar-underline"
+                            style={
+                              pathname === item.path
+                                ? { backgroundColor: 'var(--dark-purple)' }
+                                : {}
+                            }
+                          ></div>
                         </div>
                       </Link>
                     </>
