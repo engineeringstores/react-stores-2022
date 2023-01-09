@@ -15,9 +15,15 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const { pathname } = useLocation();
 
+  const navbarMessage =
+    'Happy New Year Skule! We are open for shipping and in-person shopping, pickups, and shipping';
+
   return (
     <>
       <div className="navbar-container-dropdown">
+        <div className="navbar-message-container">
+          <h4 className="navbar-message">{navbarMessage.toUpperCase()}</h4>
+        </div>
         <div className="navbar-container">
           <Link to={'/'} style={pathname === '/' ? { pointerEvents: 'none' } : {}}>
             <img className="navbar-logo" src={HorizontalLogo} />
@@ -55,7 +61,7 @@ const Navbar = () => {
                       <img className="navbar-search" src={SearchIcon} />
                     </div>
                   );
-                } else if (item.label == 'Shop') {
+                } else if (item.label === 'Shop') {
                   return (
                     <div
                       key={item.label}

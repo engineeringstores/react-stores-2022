@@ -1,4 +1,12 @@
 .navbar-container-dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
   // position: fixed;
   // //@debug: block;
   // z-index: 20;
@@ -6,10 +14,29 @@
   // width: fit-content;
 }
 
+.navbar-message-container {
+  width: 100%;
+  height: 43px;
+  background-color: var(--light-purple);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+}
+
+.navbar-message {
+  text-align: center;
+  color: var(--dark-text);
+}
+
 .navbar-container {
-  position: fixed;
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
   width: 100%;
   height: 60px;
   z-index: 21;
@@ -84,9 +111,9 @@
 .shop-container-bg {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
   z-index: 19;
   background-color: var(--light-purple-transparent);
   //backdrop-filter: blur(8px);
@@ -96,13 +123,13 @@
 
 .shop-container {
   width: 100%;
-  height: 285px;
+  height: 225px;
   position: fixed;
   // z-index: 20;
   transform-origin: top;
 
   padding: var(--padding);
-  padding-top: 90px;
+  padding-top: 30px;
   padding-bottom: 30px;
 
   background-color: var(--white);
