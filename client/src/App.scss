@@ -98,6 +98,18 @@ p {
   padding: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: var(--text-link);
+  transition: text-decoration-color 250ms;
+  cursor: pointer;
+  background: linear-gradient(to left, var(--text-link), var(--text-link));
+  background-size: 100% 2px, 0 2px;
+  background-position: 0% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
 // h3 {
 //   font-size: 16px;
 // }

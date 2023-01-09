@@ -17,12 +17,35 @@ function App() {
 
 const TransitionRoutes = () => {
   const location = useLocation();
+
   return (
     <>
-      <Navbar />
-      <div style={{ position: 'absolute', width: '100%', height: '200%' }}>
+      <TransitionGroup>
+        <Navbar />
+        <ScrollToTop />
+        <CSSTransition key={location.key} classNames="page" timeout={300}>
+          <Routes location={location}>
+            {[...pages.main, ...pages.navbar].map((page) => {
+              return (
+                <Route
+                  path={page.path}
+                  key={page.path}
+                  element={
+                    <div style={{ position: 'absolute', right: 0, left: 0, bottom: 0, top: 0 }}>
+                      <div style={{ minHeight: '100vh' }}>{page.component}</div>
+                    </div>
+                  }
+                />
+              );
+            })}
+            {/* <Route path="*" element={pages['404'].component} /> */}
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+
+      {/* <div style={{ position: 'absolute', width: '100%', height: '200%' }}>
         <PageHome />
-      </div>
+      </div> */}
     </>
 
     //<PageHome />

@@ -29,17 +29,17 @@ export const pages = {
     {
       label: 'Shop',
       component: <PageShop />,
-      path: '/about',
+      path: '/shop',
     },
     {
       label: 'Collections',
       component: <PageCollections />,
-      path: '/about',
+      path: '/collections',
     },
     {
       label: 'Consignment',
       component: <PageConsignment />,
-      path: '/about',
+      path: '/consignment',
     },
     {
       label: 'About',
