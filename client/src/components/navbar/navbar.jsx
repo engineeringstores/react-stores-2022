@@ -102,7 +102,7 @@ const Navbar = () => {
                           <div
                             className="navbar-underline"
                             style={
-                              pathname === item.path
+                              pathname === item.path && !shopOpen
                                 ? { backgroundColor: 'var(--dark-purple)' }
                                 : {}
                             }
