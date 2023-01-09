@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start:dev": "concurrently \"cd server && yarn start:dev\" \"cd client && yarn dev\"",
+        "start:dev": "concurrently \"nodemon ./server.js localhost 8080\" \"cd client && yarn dev\"",
         "prepare": "husky install"
     },
     "keywords": [],
@@ -16,9 +16,15 @@
         "lint-staged": "^12.4.1"
     },
     "dependencies": {
+        "@shopify/shopify-api": "^6.0.2",
+        "body-parser": "^1.20.1",
         "concurrently": "^7.1.0",
         "express": "^4.18.2",
         "react-router-dom": "^6.6.1",
         "react-transition-group": "^4.4.5"
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "nodemon": "^2.0.20"
     }
 }
