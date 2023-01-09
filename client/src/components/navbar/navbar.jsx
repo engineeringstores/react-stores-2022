@@ -55,6 +55,23 @@ const Navbar = () => {
                       <img className="navbar-search" src={SearchIcon} />
                     </div>
                   );
+                } else if (item.label == 'Shop') {
+                  return (
+                    <div
+                      key={item.label}
+                      className="navbar-link-container"
+                      onClick={() => {
+                        item.label === 'Shop'
+                          ? shopOpen
+                            ? setShopOpen(false)
+                            : setShopOpen(true)
+                          : setShopOpen(false);
+                      }}
+                    >
+                      <h3 className="navbar-link-text">{item.label.toUpperCase()}</h3>
+                      <div className="navbar-underline"></div>
+                    </div>
+                  );
                 } else {
                   return (
                     <>

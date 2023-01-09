@@ -28,8 +28,8 @@ export const pages = {
   navbar: [
     {
       label: 'Shop',
-      component: <PageShop />,
-      path: '/shop',
+      component: <></>,
+      //path: '/shop',
     },
     {
       label: 'Collections',
