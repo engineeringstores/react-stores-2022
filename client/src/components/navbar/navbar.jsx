@@ -41,7 +41,7 @@ const Navbar = () => {
           ) : (
             <div className="navbar-container-links">
               {pages.navbar.map((item) => {
-                if (item === 'Search') {
+                if (item.label === 'Search') {
                   return (
                     <div
                       key={item.label}
