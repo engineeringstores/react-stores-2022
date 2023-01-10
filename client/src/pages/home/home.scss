@@ -1,0 +1,38 @@
+.home-header {
+  position: relative;
+  width: 100%;
+  height: 880px;
+
+  display: flex;
+  //align-items: center;
+  justify-content: center;
+}
+
+.home-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20%;
+}
+
+.home-header-title-container {
+}
+
+.home-header-title {
+}
+
+.home-arrow-icon {
+  width: 45px;
+}
+
+.home-header-photo {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  margin-top: 103px;
+}
+
+.home-carousel-title {
+}

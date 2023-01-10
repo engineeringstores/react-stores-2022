@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './home.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { productsSelector } from '../../state/productCollection/productCollectionSlice';
@@ -7,6 +8,9 @@ import { productSelector } from '../../state/product/productSlice';
 import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
+
+import CoviesPhoto from '../../assets/merch/covies.jpg';
+import Arrow from '../../assets/icons/angle-down-solid.svg';
 
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
@@ -23,7 +27,7 @@ const PageHome = () => {
 
   return (
     <>
-
+      <HomeHeader />
       <div
         style={{
           position: 'absolute',
@@ -46,7 +50,27 @@ const PageHome = () => {
         })}
       </div>
       <div style={{ backgroundColor: 'green' }}>{product.id}</div>
+    </>
+  );
+};
 
+const HomeHeader = () => {
+  const titleMessage1 = 'for students.\nby students.';
+
+  return (
+    <>
+      <div className="home-header">
+        <div className="home-header-container">
+          <div className="home-header-title-container">
+            <h1 className="home-header-title">FOR STUDENTS.</h1>
+            <h1 className="home-header-title">BY STUDENTS.</h1>
+          </div>
+
+          <img src={Arrow} className="home-arrow-icon"></img>
+        </div>
+
+        <img src={CoviesPhoto} className="home-header-photo"></img>
+      </div>
     </>
   );
 };
