@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './home.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,8 +31,8 @@ const PageHome = () => {
   return (
     <>
       <HomeHeader />
-      <HomeStaples />
       <HomeAbout />
+      <HomeStaples />
       {/* <div
         style={{
           position: 'absolute',
@@ -83,6 +84,16 @@ const HomeAbout = () => {
         <h1 className="title-style">ABOUT</h1>
         <p>{homeAboutMessage}</p>
         {/* TODO: Button Component */}
+        <div
+          style={{
+            width: '200px',
+            margin: '20px',
+            height: '50px',
+            background: '#FFFFFF',
+            border: '1px solid #A6B3DB',
+            borderRadius: '10px',
+          }}
+        ></div>
       </div>
     </>
   );
@@ -91,17 +102,32 @@ const HomeAbout = () => {
 const HomeStaples = () => {
   return (
     <>
-      <HomeStaplesComponent />
+      <div className="home-staples">
+        <h1 className="title-style">STAPLES</h1>
+        <div className="home-staples-container">
+          <HomeStaplesComponent />
+        </div>
+      </div>
     </>
   );
 };
 
 const HomeStaplesComponent = () => {
+  const imageUrl = '../../assets/merch/coveralls-square.png';
+
   return (
     <>
-      <div className="home-staples-component-container"></div>
+      {/* <div className="home-staples-component-container" style={{backgroundImage: `url(${imageUrl})`}}>
+      </div> */}
+      <div className="home-staples-component-container">
+        <h1>COVERALLS</h1>
+      </div>
     </>
   );
+};
+
+HomeStaplesComponent.PropTypes = {
+  imageUrl: PropTypes.string,
 };
 
 export { PageHome };

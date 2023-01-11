@@ -82,10 +82,37 @@
 }
 
 .home-about-container {
-  padding: 5% 25%;
+  padding: 5% 20%;
 }
 
 ////
 
+.home-staples {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-staples-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
 .home-staples-component-container {
+  width: 500px;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(180deg, rgba(99, 73, 147, 0.7) 0%, rgba(113, 66, 175, 0.5) 100%),
+    url('../../assets/merch/coveralls-square.png') center center;
 }
