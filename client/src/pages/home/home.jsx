@@ -28,7 +28,7 @@ const PageHome = () => {
   return (
     <>
       <HomeHeader />
-      <div
+      {/* <div
         style={{
           position: 'absolute',
           top: '500px',
@@ -37,7 +37,7 @@ const PageHome = () => {
           width: '50px',
           height: '50px',
         }}
-      ></div>
+      ></div> */}
 
       <div style={{ backgroundColor: 'red' }}>
         {collections.map((collection) => {
@@ -59,17 +59,14 @@ const HomeHeader = () => {
 
   return (
     <>
-      <div className="home-header">
-        <div className="home-header-container">
+      <div className="home-header-container">
+        <div className="home-header-container-contents">
           <div className="home-header-title-container">
             <h1 className="home-header-title">FOR STUDENTS.</h1>
             <h1 className="home-header-title">BY STUDENTS.</h1>
           </div>
-
           <img src={Arrow} className="home-arrow-icon"></img>
         </div>
-
-        <img src={CoviesPhoto} className="home-header-photo"></img>
       </div>
     </>
   );
