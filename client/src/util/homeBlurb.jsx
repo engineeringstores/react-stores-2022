@@ -1,0 +1,1 @@
+export const homeAboutMessage = `Conveniently located in the basement of the Sandford Fleming building, the Engineering Stores carries first year textbooks, Skule and discipline clothing, stationery, and so much more! We are student run and here to help you through your first year. `;

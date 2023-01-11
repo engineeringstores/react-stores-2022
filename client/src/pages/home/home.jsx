@@ -9,6 +9,8 @@ import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
 
+import { homeAboutMessage } from '../../util/homeBlurb';
+
 import CoviesPhoto from '../../assets/merch/covies.jpg';
 import Arrow from '../../assets/icons/angle-down-solid.svg';
 
@@ -28,6 +30,8 @@ const PageHome = () => {
   return (
     <>
       <HomeHeader />
+      <HomeStaples />
+      <HomeAbout />
       {/* <div
         style={{
           position: 'absolute',
@@ -68,6 +72,34 @@ const HomeHeader = () => {
           <img src={Arrow} className="home-arrow-icon"></img>
         </div>
       </div>
+    </>
+  );
+};
+
+const HomeAbout = () => {
+  return (
+    <>
+      <div className="home-about-container">
+        <h1 className="title-style">ABOUT</h1>
+        <p>{homeAboutMessage}</p>
+        {/* TODO: Button Component */}
+      </div>
+    </>
+  );
+};
+
+const HomeStaples = () => {
+  return (
+    <>
+      <HomeStaplesComponent />
+    </>
+  );
+};
+
+const HomeStaplesComponent = () => {
+  return (
+    <>
+      <div className="home-staples-component-container"></div>
     </>
   );
 };

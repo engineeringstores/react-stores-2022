@@ -67,8 +67,14 @@ html {
   src: url('./fonts/OpenSans-SemiBold.ttf');
 }
 
+.title-style {
+}
+
 h1 {
+  color: var(--dark-purple);
   font-family: 'Lovelo-Black', sans-serif;
+  padding-bottom: 30px;
+  letter-spacing: 0.23em;
 }
 
 h2 {
@@ -97,8 +103,10 @@ h4 {
 
 p {
   font-family: 'Inter-Bold', sans-serif;
+  color: var(--grey);
   margin: 0px;
   padding: 0px;
+  font-size: 18px;
 }
 
 a {
