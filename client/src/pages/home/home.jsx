@@ -132,32 +132,29 @@ const HomeStaplesComponent = () => {
           setOpen(!open);
         }}
       >
-        <h1
-          className={
-            open ? 'home-staples-component' : 'home-staples-component home-staples-component-open'
-          }
-        >
-          {title}
-        </h1>
-        {open ? (
-          <>
-            <div className="home-staples-description">
-              <p className="home-staples-description-text">{desc}</p>
-              <Link to={url}>
-                <p>{linkText}</p>
-              </Link>
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
         <img className="home-staples-img" src={image} />
+        <div className="home-staples-component-contents">
+          <h1
+            className={
+              open ? 'home-staples-component' : 'home-staples-component home-staples-component-open'
+            }
+          >
+            {title}
+          </h1>
+          {open ? (
+            <>
+              <div className="home-staples-description">
+                <p className="home-staples-description-text">{desc}</p>
+                <Link to={url}>
+                  <p>{linkText}</p>
+                </Link>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
-      {/* <div className="home-staples-component-container" style={{backgroundImage: `url(${imageUrl})`}}>
-      </div> */}
-      {/* <div className="home-staples-component-container">
-        <h1>COVERALLS</h1>
-      </div> */}
     </>
   );
 };
