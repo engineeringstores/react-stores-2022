@@ -14,6 +14,9 @@ import { homeAboutMessage } from '../../util/homeBlurb';
 
 import CoviesPhoto from '../../assets/merch/covies.jpg';
 import Arrow from '../../assets/icons/angle-down-solid.svg';
+import LeatherJacketSquare from '../../assets/merch/leather-jacket-square.png';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
@@ -113,15 +116,48 @@ const HomeStaples = () => {
 };
 
 const HomeStaplesComponent = () => {
-  const imageUrl = '../../assets/merch/coveralls-square.png';
+  const image = LeatherJacketSquare;
+  const title = 'LEATHER JACKETS';
+  const desc = 'Want to be a part of a long standing UofT Engineering tradition?';
+  const linkText = 'Click to learn more!';
+  const url = '/leather-jackets';
+
+  const [open, setOpen] = useState(false);
 
   return (
     <>
+      <div
+        className="home-staples-component"
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
+        <h1
+          className={
+            open ? 'home-staples-component' : 'home-staples-component home-staples-component-open'
+          }
+        >
+          {title}
+        </h1>
+        {open ? (
+          <>
+            <div className="home-staples-description">
+              <p className="home-staples-description-text">{desc}</p>
+              <Link to={url}>
+                <p>{linkText}</p>
+              </Link>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
+        <img className="home-staples-img" src={image} />
+      </div>
       {/* <div className="home-staples-component-container" style={{backgroundImage: `url(${imageUrl})`}}>
       </div> */}
-      <div className="home-staples-component-container">
+      {/* <div className="home-staples-component-container">
         <h1>COVERALLS</h1>
-      </div>
+      </div> */}
     </>
   );
 };
