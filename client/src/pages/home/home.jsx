@@ -106,7 +106,7 @@ const HomeStaples = () => {
   return (
     <>
       <div className="home-staples">
-        <h1 className="title-style">STAPLES</h1>
+        {/* <h1 className="title-style">STAPLES</h1> */}
         <div className="home-staples-container">
           <HomeStaplesComponent />
         </div>
@@ -127,26 +127,22 @@ const HomeStaplesComponent = () => {
   return (
     <>
       <div
-        className="home-staples-component"
+        className={
+          open ? 'home-staples-component home-staples-component-open' : 'home-staples-component'
+        }
         onClick={() => {
           setOpen(!open);
         }}
       >
         <img className="home-staples-img" src={image} />
         <div className="home-staples-component-contents">
-          <h1
-            className={
-              open ? 'home-staples-component' : 'home-staples-component home-staples-component-open'
-            }
-          >
-            {title}
-          </h1>
+          <h1 className="home-staples-component-text">{title}</h1>
           {open ? (
             <>
               <div className="home-staples-description">
                 <p className="home-staples-description-text">{desc}</p>
                 <Link to={url}>
-                  <p>{linkText}</p>
+                  <p className="home-staples-link-text">{linkText}</p>
                 </Link>
               </div>
             </>
