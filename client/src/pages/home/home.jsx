@@ -96,9 +96,9 @@ const HomeStaples = () => {
   return (
     <>
       <div className="home-staples">
+        <h1>OUR TRADITIONS</h1>
         <div className="home-staples-container">
           {homeStaples.map((staple) => {
-            console.log(staple);
             return (
               <>
                 <HomeStaplesComponent
@@ -164,20 +164,27 @@ const HomeLocation = () => {
         <h1 className="title-style" style={{ color: 'var(--white)' }}>
           {header}
         </h1>
-        <p className="home-staples-description-text">{locationDesc}</p>
+        <p
+          className="home-staples-description-text"
+          style={{ marginBottom: '50px', padding: '0 10%' }}
+        >
+          {locationDesc}
+        </p>
         <div className="home-location-subcontainer">
           <img className="home-location-image" src={LocationImg} />
           <div className="home-location-hours-container">
-            <h2>HOURS</h2>
+            <h2 className="home-location-hours-title">HOURS</h2>
             <table id="operation-hours" className="home-location-hours-table">
-              {operationHours.map((date) => {
-                return (
-                  <tr key={date.day}>
-                    <td>{date.day}</td>
-                    <td>{date.time}</td>
-                  </tr>
-                );
-              })}
+              <tbody>
+                {operationHours.map((date) => {
+                  return (
+                    <tr key={date.day}>
+                      <td>{date.day.toUpperCase()}</td>
+                      <td>{date.time.toUpperCase()}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
             </table>
           </div>
         </div>

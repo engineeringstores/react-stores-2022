@@ -17,7 +17,6 @@ function App() {
 
 const TransitionRoutes = () => {
   const location = useLocation();
-
   return (
     <>
       <TransitionGroup>

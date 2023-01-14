@@ -82,7 +82,8 @@
 }
 
 .home-about-container {
-  padding: 5% 20%;
+  padding: 0 20%;
+  padding-top: 5%;
 }
 
 ////
@@ -237,4 +238,39 @@
 ///////////////////////
 
 .home-location-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5%;
+
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(270deg, var(--gradient-purple) 0%, vaR(--gradient-dark-blue) 100%);
+}
+
+.home-location-subcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.home-location-image {
+  width: 40%;
+}
+
+.home-location-hours-title {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.home-location-hours-table {
+  color: var(--white);
+}
+
+#operation-hours td {
+  padding: 5px;
 }
