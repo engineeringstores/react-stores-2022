@@ -10,7 +10,7 @@ import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
 
-import { homeAboutMessage } from '../../util/homeBlurb';
+import { homeAboutMessage, homeStaples } from '../../util/homeBlurb';
 
 import CoviesPhoto from '../../assets/merch/covies.jpg';
 import Arrow from '../../assets/icons/angle-down-solid.svg';
@@ -108,19 +108,32 @@ const HomeStaples = () => {
       <div className="home-staples">
         {/* <h1 className="title-style">STAPLES</h1> */}
         <div className="home-staples-container">
-          <HomeStaplesComponent />
+          {homeStaples.map((staple) => {
+            console.log(staple);
+            return (
+              <>
+                <HomeStaplesComponent
+                  key={staple.title}
+                  title={staple.title}
+                  image={staple.image}
+                  desc={staple.desc}
+                  url={staple.url}
+                />
+              </>
+            );
+          })}
         </div>
       </div>
     </>
   );
 };
 
-const HomeStaplesComponent = () => {
-  const image = LeatherJacketSquare;
-  const title = 'LEATHER JACKETS';
-  const desc = 'Want to be a part of a long standing UofT Engineering tradition?';
+const HomeStaplesComponent = ({ title, image, desc, url }) => {
+  // const image = LeatherJacketSquare;
+  // const title = 'LEATHER JACKETS';
+  // const desc = 'Want to be a part of a long standing UofT Engineering tradition?';
   const linkText = 'Click to learn more!';
-  const url = '/leather-jackets';
+  // const url = '/leather-jackets';
 
   const [open, setOpen] = useState(false);
 
@@ -128,7 +141,9 @@ const HomeStaplesComponent = () => {
     <>
       <div
         className={
-          open ? 'home-staples-component home-staples-component-open' : 'home-staples-component'
+          open
+            ? 'home-staples-component home-staples-component-open'
+            : 'home-staples-component home-staples-component-close'
         }
         onClick={() => {
           setOpen(!open);
@@ -155,8 +170,11 @@ const HomeStaplesComponent = () => {
   );
 };
 
-HomeStaplesComponent.PropTypes = {
-  imageUrl: PropTypes.string,
+HomeStaplesComponent.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  desc: PropTypes.string,
+  url: PropTypes.string,
 };
 
 export { PageHome };

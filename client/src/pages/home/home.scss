@@ -99,9 +99,10 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   text-align: center;
+  padding: var(--padding);
 }
 
 .home-staples-component {
@@ -110,26 +111,34 @@
   cursor: pointer;
 
   background: linear-gradient(180deg, var(--gradient-dark-purple) 0%, var(--gradient-purple) 100%);
-  width: min(40vw, 400px);
-  height: min(40vw, 400px);
+  width: min(40vw, 500px);
+  height: min(40vw, 500px);
 
   &:hover {
     .home-staples-img {
       opacity: 40%;
       transition: opacity var(--transition-middling);
     }
+  }
+  .home-staples-img {
+    transition: opacity var(--transition-middling);
+  }
+}
 
+.home-staples-component-close {
+  &:hover {
     .home-staples-component-text {
       transform: scale(var(--scale-up));
       transition: transform var(--transition-middling);
     }
   }
-  .home-staples-img {
-    transition: opacity var(--transition-middling);
-  }
   .home-staples-component-text {
-    //transform: scale(1.05);
+    //transform: scale(1);
     transition: transform var(--transition-middling);
+  }
+  .home-staples-description {
+    animation-name: fade-out-slide-down;
+    animation-duration: var(--transition-middling);
   }
 }
 
@@ -146,8 +155,36 @@
   }
 
   .home-staples-component-text {
+    transform: scale(1);
     pointer-events: none;
     padding-bottom: 20px;
+  }
+
+  .home-staples-description {
+    animation-name: fade-in-slide-up;
+    animation-duration: var(--transition-middling);
+  }
+}
+
+@keyframes fade-in-slide-up {
+  from {
+    opacity: 0%;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out-slide-down {
+  from {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0%;
+    transform: translateY(5px);
   }
 }
 
