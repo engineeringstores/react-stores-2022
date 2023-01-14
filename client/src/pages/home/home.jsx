@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './home.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,13 +12,10 @@ import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
 
-import { homeAboutMessage, homeStaples } from '../../util/homeBlurb';
+import { homeAboutMessage, homeStaples, locationDesc, operationHours } from '../../util/homeBlurb';
 
-import CoviesPhoto from '../../assets/merch/covies.jpg';
 import Arrow from '../../assets/icons/angle-down-solid.svg';
-import LeatherJacketSquare from '../../assets/merch/leather-jacket-square.png';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import LocationImg from '../../assets/images/location.svg';
 
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
@@ -36,16 +35,7 @@ const PageHome = () => {
       <HomeHeader />
       <HomeAbout />
       <HomeStaples />
-      {/* <div
-        style={{
-          position: 'absolute',
-          top: '500px',
-          left: '50%',
-          backgroundColor: 'red',
-          width: '50px',
-          height: '50px',
-        }}
-      ></div> */}
+      <HomeLocation />
 
       <div style={{ backgroundColor: 'red' }}>
         {collections.map((collection) => {
@@ -106,7 +96,6 @@ const HomeStaples = () => {
   return (
     <>
       <div className="home-staples">
-        {/* <h1 className="title-style">STAPLES</h1> */}
         <div className="home-staples-container">
           {homeStaples.map((staple) => {
             console.log(staple);
@@ -129,11 +118,7 @@ const HomeStaples = () => {
 };
 
 const HomeStaplesComponent = ({ title, image, desc, url }) => {
-  // const image = LeatherJacketSquare;
-  // const title = 'LEATHER JACKETS';
-  // const desc = 'Want to be a part of a long standing UofT Engineering tradition?';
   const linkText = 'Click to learn more!';
-  // const url = '/leather-jackets';
 
   const [open, setOpen] = useState(false);
 
@@ -164,6 +149,37 @@ const HomeStaplesComponent = ({ title, image, desc, url }) => {
           ) : (
             <></>
           )}
+        </div>
+      </div>
+    </>
+  );
+};
+
+const HomeLocation = () => {
+  const header = 'where to find us';
+
+  return (
+    <>
+      <div className="home-location-container">
+        <h1 className="title-style" style={{ color: 'var(--white)' }}>
+          {header}
+        </h1>
+        <p className="home-staples-description-text">{locationDesc}</p>
+        <div className="home-location-subcontainer">
+          <img className="home-location-image" src={LocationImg} />
+          <div className="home-location-hours-container">
+            <h2>HOURS</h2>
+            <table id="operation-hours" className="home-location-hours-table">
+              {operationHours.map((date) => {
+                return (
+                  <tr key={date.day}>
+                    <td>{date.day}</td>
+                    <td>{date.time}</td>
+                  </tr>
+                );
+              })}
+            </table>
+          </div>
         </div>
       </div>
     </>

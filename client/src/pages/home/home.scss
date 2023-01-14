@@ -93,6 +93,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: var(--padding);
+  margin: 5% 0;
 }
 
 .home-staples-container {
@@ -102,7 +104,6 @@
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  padding: var(--padding);
 }
 
 .home-staples-component {
@@ -231,4 +232,9 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   width: fit-content;
+}
+
+///////////////////////
+
+.home-location-container {
 }

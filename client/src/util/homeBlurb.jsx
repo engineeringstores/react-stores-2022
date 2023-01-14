@@ -17,3 +17,29 @@ export const homeStaples = [
     url: '/coveralls',
   },
 ];
+
+export const locationDesc =
+  'Stores is now open at the Pit @ Sandford Fleming building!\n We offer in person shopping / pick up as well as worldwide shipping (Except US)';
+
+export const operationHours = [
+  {
+    day: 'Monday',
+    time: '11am-4pm',
+  },
+  {
+    day: 'Tuesday',
+    time: '11am-4pm',
+  },
+  {
+    day: 'Wednesday',
+    time: '11am-4pm',
+  },
+  {
+    day: 'Thursday',
+    time: '11am-4pm',
+  },
+  {
+    day: 'Friday',
+    time: '11am-4pm',
+  },
+];
