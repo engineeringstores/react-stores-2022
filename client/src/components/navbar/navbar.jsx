@@ -146,9 +146,8 @@ const ShopDropDown = ({ open }) => {
     { title: 'Coveralls', route: '/catalogue/coveralls', id: 'collection.id' },
   ];
   const shopCategories = collections.map((collection) => {
-    const idSplit = collection.id.split('/');
-    const collectionID = idSplit[idSplit.length - 1];
-    return { title: collection.title, route: `/catalogue/${collectionID}`, id: collectionID };
+    const collectionID = collection.id.substring(collection.id.lastIndexOf('/') + 1);
+    return { title: collection.title, route: `/catalogue/${collectionID}`, id: collection.id };
   });
   const shopDisciplines = [
     { title: 'Chemical', route: 'collection.id', id: 'collection.id' },

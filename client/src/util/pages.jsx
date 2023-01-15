@@ -3,6 +3,7 @@ import { PageAbout } from '../pages/about/about';
 import { PageCollections } from '../pages/collections/collections';
 import { PageCatalogue } from '../pages/catalogue/catalogue';
 import { PageConsignment } from '../pages/consignment/consignment';
+import { PageProduct } from '../pages/product/product';
 import { PageHome } from '../pages/home/home';
 import { PageShop } from '../pages/shop/shop';
 //import AuthorizedPage from './AuthorizedPage';
@@ -53,7 +54,9 @@ export const pages = {
       path: '/about',
     },
   ],
-  footer: [],
   special: [],
-  hidden: [{ label: 'Catalogue', component: <PageCatalogue />, path: '/catalogue/*' }],
+  hidden: [
+    { label: 'Catalogue', component: <PageCatalogue />, path: '/catalogue/*' },
+    { label: 'Product', component: <PageProduct />, path: '/product/*' },
+  ],
 };

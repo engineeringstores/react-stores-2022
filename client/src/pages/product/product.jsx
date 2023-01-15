@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-const PageCatalogue = () => {
+const PageProduct = () => {
   const location = useLocation();
 
   return (
@@ -16,4 +16,4 @@ const PageCatalogue = () => {
   );
 };
 
-export { PageCatalogue };
+export { PageProduct };
