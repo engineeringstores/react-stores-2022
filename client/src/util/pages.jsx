@@ -1,6 +1,7 @@
 //import { Page404 } from '../pages/404/404';
 import { PageAbout } from '../pages/about/about';
 import { PageCollections } from '../pages/collections/collections';
+import { PageCatalogue } from '../pages/catalogue/catalogue';
 import { PageConsignment } from '../pages/consignment/consignment';
 import { PageHome } from '../pages/home/home';
 import { PageShop } from '../pages/shop/shop';
@@ -54,5 +55,5 @@ export const pages = {
   ],
   footer: [],
   special: [],
-  hidden: [],
+  hidden: [{ label: 'Catalogue', component: <PageCatalogue />, path: '/catalogue/*' }],
 };
