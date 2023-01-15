@@ -52,6 +52,7 @@ export const pages = {
       path: '/about',
     },
   ],
+  footer: [],
   special: [],
   hidden: [],
 };
