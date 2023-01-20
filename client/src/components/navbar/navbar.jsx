@@ -10,7 +10,17 @@ import HorizontalLogo from '../../assets/logo/es-horizontal-logo.svg';
 import SearchIcon from '../../assets/icons/magnifying-glass-solid.svg';
 import XIcon from '../../assets/icons/xmark-solid.svg';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { collectionsSelector } from '../../state/collections/collectionsSlice';
+import { getCollections } from '../../state/collections/saga';
+
 const Navbar = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCollections());
+  }, []);
+
   const [shopOpen, setShopOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { pathname } = useLocation();
@@ -129,16 +139,24 @@ const Navbar = () => {
 };
 
 const ShopDropDown = ({ open }) => {
-  const shopStaples = ['Leather Jackets', 'Coveralls'];
-  const shopCategories = [
-    'Accessories',
-    'Patches',
-    'Small Trinkets',
-    'Stationary',
-    'Tshirts',
-    'Sweaters',
+  const { collections } = useSelector(collectionsSelector);
+
+  const shopStaples = [
+    { title: 'Leather Jackets', route: '/catalogue/jackets', id: 'collection.id' },
+    { title: 'Coveralls', route: '/catalogue/coveralls', id: 'collection.id' },
   ];
-  const shopDisciplines = ['Chemical', 'Civil', 'ECE', 'Industrial', 'Material', 'Mech'];
+  const shopCategories = collections.map((collection) => {
+    const collectionID = collection.id.substring(collection.id.lastIndexOf('/') + 1);
+    return { title: collection.title, route: `/catalogue/${collectionID}`, id: collection.id };
+  });
+  const shopDisciplines = [
+    { title: 'Chemical', route: 'collection.id', id: 'collection.id' },
+    { title: 'Civil', route: 'collection.id', id: 'collection.id' },
+    { title: 'ECE', route: 'collection.id', id: 'collection.id' },
+    { title: 'Industrial', route: 'collection.id', id: 'collection.id' },
+    { title: 'Material', route: 'collection.id', id: 'collection.id' },
+    { title: 'Mech', route: 'collection.id', id: 'collection.id' },
+  ];
 
   const shop = [
     {
@@ -174,9 +192,13 @@ const ShopDropDown = ({ open }) => {
                               {category.items.map((item, i) => {
                                 if (i < 5) {
                                   return (
-                                    <h4 key={item} className="shop-category-text">
-                                      {item}
-                                    </h4>
+                                    <>
+                                      <Link to={item.route}>
+                                        <h4 key={item.id} className="shop-category-text">
+                                          {item.title}
+                                        </h4>
+                                      </Link>
+                                    </>
                                   );
                                 }
                               })}
@@ -186,9 +208,11 @@ const ShopDropDown = ({ open }) => {
                                 {category.items.map((item, i) => {
                                   if (i >= 5) {
                                     return (
-                                      <h4 key={item} className="shop-category-text">
-                                        {item}
-                                      </h4>
+                                      <Link to={item.route}>
+                                        <h4 key={item.id} className="shop-category-text">
+                                          {item.title}
+                                        </h4>
+                                      </Link>
                                     );
                                   }
                                 })}
