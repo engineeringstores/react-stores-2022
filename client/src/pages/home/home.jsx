@@ -8,6 +8,8 @@ import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
 
+import { BuyButton } from '../../components/buyButton/buyButton';
+
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
   const { products } = useSelector(productsSelector);
@@ -23,7 +25,6 @@ const PageHome = () => {
 
   return (
     <>
-
       <div
         style={{
           position: 'absolute',
@@ -34,7 +35,7 @@ const PageHome = () => {
           height: '50px',
         }}
       ></div>
-
+      <BuyButton />
       <div style={{ backgroundColor: 'red' }}>
         {collections.map((collection) => {
           return <li key={collection.id}>{collection.title}</li>;
@@ -46,7 +47,6 @@ const PageHome = () => {
         })}
       </div>
       <div style={{ backgroundColor: 'green' }}>{product.id}</div>
-
     </>
   );
 };

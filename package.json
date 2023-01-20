@@ -16,14 +16,15 @@
         "lint-staged": "^12.4.1"
     },
     "dependencies": {
+        "@shopify/buy-button-js": "^2.2.1",
         "@shopify/shopify-api": "^6.0.2",
         "body-parser": "^1.20.1",
         "concurrently": "^7.1.0",
-        "express": "^4.18.2",
-        "react-router-dom": "^6.6.1",
-        "react-transition-group": "^4.4.5",
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
-        "nodemon": "^2.0.20"
+        "express": "^4.18.2",
+        "nodemon": "^2.0.20",
+        "react-router-dom": "^6.6.1",
+        "react-transition-group": "^4.4.5"
     }
 }
