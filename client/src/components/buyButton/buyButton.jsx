@@ -2,10 +2,12 @@
 import { useEffect } from 'react';
 import ShopifyBuy from '@shopify/buy-button-js';
 
-const BuyButton = () => {
+import PropTypes from 'prop-types';
+
+const BuyButton = ({ productID }) => {
   const shopifyClient = ShopifyBuy.buildClient({
-    domain: 'u-of-t-engineering-stores.myshopify.com',
-    storefrontAccessToken: 'a637453c4cbc63c8ae6c74dd69c9366b', // previously apiKey, now deprecated
+    domain: import.meta.env.VITE_APP_SHOPIFY_URL,
+    storefrontAccessToken: import.meta.env.VITE_APP_SHOPIFY_STORFRONT_API_KEY,
   });
 
   const ui = ShopifyBuy.UI.init(shopifyClient);
@@ -35,26 +37,36 @@ const BuyButton = () => {
     option: {}, // configure the variant option selectors within a product
     lineItem: {}, // configure the individual line items within a cart
   };
-  useEffect(() => {
+
+  const loadProduct = () => {
     ui.createComponent('product', {
-      id: '6716470722769',
-      node: document.getElementById('6716470722769'),
+      id: productID,
+      node: document.getElementById('product-buy-button'),
       options: buyButtonOptions,
     });
-    //     ui.createComponent('product', {
-    //       id: 'gid://shopify/Product/6716470722769',
-    //       node: document.getElementById('6716470722769'),
-    //       options: {
-    //         product: {
-    //           buttonDestination: 'modal',
-    //         },
-    //         cart: {
-    //           startOpen: false,
-    //         },
-    //       },
-    //     });
+  };
+
+  useEffect(() => {
+    console.log(productID);
+    ui.createComponent('product', {
+      id: productID,
+      node: document.getElementById('product-buy-button'),
+      options: buyButtonOptions,
+    });
   });
-  return <div id={'6716470722769'} />;
+
+  return (
+    <div
+      id={'product-buy-button'}
+      onLoad={() => {
+        loadProduct();
+      }}
+    />
+  );
+};
+
+BuyButton.propTypes = {
+  productID: PropTypes.string,
 };
 
 export { BuyButton };
