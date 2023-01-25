@@ -182,28 +182,73 @@ const ShopDropDown = ({ open }) => {
               <div className="shop-categories">
                 <>
                   {shop.map((category) => {
+                    // to display sections of categories
+                    let numitems = 5; // items displayed in each
+                    let numsections = category.items.length / numitems;
+                    let sectionlist = [];
+
+                    for (let i = 0; i <= numsections; i++) {
+                      sectionlist.push(i); // add each section number to list
+                    }
+
+                    console.log(sectionlist);
+
                     return (
                       <>
                         <div key={category.label} className="shop-category-container">
                           <h2 className="shop-category-title">{category.label.toUpperCase()}</h2>
 
                           <div className="shop-category-text-row">
-                            <div className="shop-category-text-column">
-                              {category.items.map((item, i) => {
-                                if (i < 5) {
-                                  return (
-                                    <>
-                                      <Link to={item.route}>
-                                        <h4 key={item.id} className="shop-category-text">
-                                          {item.title}
-                                        </h4>
-                                      </Link>
-                                    </>
-                                  );
-                                }
-                              })}
-                            </div>
-                            {category.items.length >= 5 ? (
+                            {sectionlist.map((index) => {
+                              return (
+                                <>
+                                  <div className="shop-category-text-column">
+                                    {category.items.map((item, i) => {
+                                      let low = index * numitems;
+                                      let high = (index + 1) * numitems;
+
+                                      if (i >= low && i < high) {
+                                        return (
+                                          <>
+                                            <Link to={item.route}>
+                                              <h4 key={item.id} className="shop-category-text">
+                                                {item.title}
+                                              </h4>
+                                            </Link>
+                                          </>
+                                        );
+                                      }
+                                    })}
+                                  </div>
+                                </>
+                              );
+                            })}
+
+                            {/* <div className="shop-category-text-column"> */}
+
+                            {/* 
+                              {
+                                category.items.map((item, i) => {
+
+                                  let sections = category.items.length();
+	                                let numitems = 5; // items displayed in each
+
+                                  if (i < 5) {
+                                    return (
+                                      <>
+                                        <Link to={item.route}>
+                                          <h4 key={item.id} className="shop-category-text">
+                                            {item.title}
+                                          </h4>
+                                        </Link>
+                                      </>
+                                    );
+                                  }
+                                })
+                              } */}
+                            {/* </div> */}
+
+                            {/* {category.items.length >= 5 ? (
                               <div className="shop-category-text-column">
                                 {category.items.map((item, i) => {
                                   if (i >= 5) {
@@ -219,7 +264,7 @@ const ShopDropDown = ({ open }) => {
                               </div>
                             ) : (
                               <></>
-                            )}
+                            )} */}
                           </div>
                         </div>
                       </>
