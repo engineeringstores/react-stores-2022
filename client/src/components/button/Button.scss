@@ -1,0 +1,53 @@
+/*.button {
+    margin: 15px 10px;
+    background-color: var(--light-blue);
+    color: var(--white);
+    display: inline-block;
+    border-radius: 14px;
+    padding: 14px 30px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 200ms, background-color 200ms;
+    user-select: none;
+  
+  }*/
+
+  /* Rectangle 18 */
+.button {
+  position: relative;
+  /*left: 621px;
+  right: 626px;
+  top: 1246px;
+  bottom: 2576px;*/
+
+  background: var(--white);
+  border: 1px solid var(--light-blue);
+  color: var(--light-blue);
+  border-radius: 10px;
+
+  /* MEET THE TEAM */
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 27px;
+  text-align: center;
+
+  padding: 14px 30px;
+
+  transition: transform 200ms, background-color 200ms;
+
+
+  &:hover {
+    transform: scale(1.02);
+    transition: transform 200ms;
+  }
+  &:active {
+    transform: scale(0.97);
+    transition: transform 150ms;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { productsSelector } from '../../state/productCollection/productCollectionSlice';
@@ -8,10 +8,13 @@ import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
 
+import { Button } from '../../components/button/Button'
+
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
   const { products } = useSelector(productsSelector);
   const { product } = useSelector(productSelector);
+  const [ click, setClick ] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -24,16 +27,24 @@ const PageHome = () => {
   return (
     <>
 
-      <div
+      <Button
         style={{
           position: 'absolute',
           top: '500px',
           left: '50%',
-          backgroundColor: 'red',
-          width: '50px',
-          height: '50px',
+          margin: '0',
+          transform: 'translate(-50%, -50%)'
+          //backgroundColor: 'red',
         }}
-      ></div>
+        text = { click ? "this worked" : "Hello" }
+        classes = ""
+        onClick = {() => {
+          setClick(!click);
+          console.log("this worked!");
+        }}
+      />
+
+      
 
       <div style={{ backgroundColor: 'red' }}>
         {collections.map((collection) => {
