@@ -15,7 +15,6 @@ const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
   const { products } = useSelector(productsSelector);
   const { product } = useSelector(productSelector);
-  const [ click, setClick ] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -31,17 +30,12 @@ const PageHome = () => {
         style={{
           position: 'absolute',
           top: '500px',
-          left: '50%',
+          left: '42.5%', // best attempt to center without stacked transformations
+          // can be set to the right position when needed!
           margin: '0',
-          transform: 'translate(-50%, -50%)'
-          //backgroundColor: 'red',
         }}
-        text = { click ? "this worked" : "Hello" }
-        classes = ""
-        onClick = {() => {
-          setClick(!click);
-          console.log("this worked!");
-        }}
+        text = "MEET THE TEAM"
+        onClick = {function(){}}
       />
       <BuyButton />
       <div style={{ backgroundColor: 'red' }}>

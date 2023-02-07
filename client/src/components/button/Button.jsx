@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Button.scss'
 
-const Button = ({ text, style, classes, onClick }) => {
+const Button = ({ text, style, onClick }) => {
     return (
         <div
             onClick = {onClick}
@@ -16,6 +16,7 @@ const Button = ({ text, style, classes, onClick }) => {
 
 Button.propTypes = {
     text: PropTypes.string,
+    style: PropTypes.object,
     onClick: PropTypes.func,
 }
 
