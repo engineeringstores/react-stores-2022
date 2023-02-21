@@ -1,7 +1,18 @@
 .item-display-container {
   display: flex;
+  text-align: center;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+}
+
+.item-display-image {
+  height: 30vh;
+}
+.item-display-info {
+  max-width: 14vw;
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 18px;
+  }
 }

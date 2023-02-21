@@ -1,0 +1,16 @@
+.all-products-title {
+  padding-top: 35vh;
+
+  text-align: center;
+  h1 {
+    font-size: 48px;
+    color: #282561;
+    letter-spacing: 0.23em;
+  }
+}
+
+.all-products-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

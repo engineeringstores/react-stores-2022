@@ -6,6 +6,7 @@ import { PageConsignment } from '../pages/consignment/consignment';
 import { PageProduct } from '../pages/product/product';
 import { PageHome } from '../pages/home/home';
 import { PageShop } from '../pages/shop/shop';
+import { PageAllProducts } from '../pages/allProducts/PageAllProducts';
 //import AuthorizedPage from './AuthorizedPage';
 
 export const pages = {
@@ -58,5 +59,6 @@ export const pages = {
   hidden: [
     { label: 'Catalogue', component: <PageCatalogue />, path: '/catalogue/*' },
     { label: 'Product', component: <PageProduct />, path: '/product/*' },
+    { label: 'AllProduct', component: <PageAllProducts />, path: '/products/' },
   ],
 };
