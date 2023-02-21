@@ -37,19 +37,25 @@ const ShopifyServices = {
             hasPreviousPage
           }
           nodes {
-            id
-            productType
-            collections(first: 30) {
-              nodes {
-                title
+            featuredImage {
+              url
+            }
+            title
+            priceRange {
+              minVariantPrice {
+                amount
               }
             }
           }
         }
       }`,
     });
-    const products = response.body.data.products.edges.map((edge) => {
-      return edge.node;
+    const products = response.body.data.products.nodes.map((node) => {
+      return {
+        title: node.title,
+        imageURL: node.featuredImage?.url,
+        price: node.priceRange.minVariantPrice.amount,
+      };
     });
     return products;
   },
