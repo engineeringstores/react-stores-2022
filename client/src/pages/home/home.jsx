@@ -8,8 +8,7 @@ import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
 
-import { Button } from '../../components/button/Button'
-import { BuyButton } from '../../components/buyButton/buyButton';
+import { ItemDisplay } from '../../components/itemDisplay/itemDisplay';
 
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
@@ -26,18 +25,6 @@ const PageHome = () => {
 
   return (
     <>
-      <Button
-        style={{
-          position: 'absolute',
-          top: '500px',
-          left: '42.5%', // best attempt to center without stacked transformations
-          // can be set to the right position when needed!
-          margin: '0',
-        }}
-        text = "MEET THE TEAM"
-        onClick = {function(){}}
-      />
-      <BuyButton />
       <div style={{ backgroundColor: 'red' }}>
         {collections.map((collection) => {
           return <li key={collection.id}>{collection.title}</li>;
@@ -49,6 +36,13 @@ const PageHome = () => {
         })}
       </div>
       <div style={{ backgroundColor: 'green' }}>{product.id}</div>
+      <ItemDisplay
+        name={'test'}
+        price={0.5}
+        imageURL={
+          'https://cdn.shopify.com/s/files/1/0569/4858/8753/products/Utility_Green_UofMeg_161df0fd-538e-4369-b29c-eca0b7d8b336.jpg?v=1629064903'
+        }
+      />
     </>
   );
 };
