@@ -36,13 +36,6 @@ const PageHome = () => {
         })}
       </div>
       <div style={{ backgroundColor: 'green' }}>{product.id}</div>
-      <ItemDisplay
-        name={'test'}
-        price={0.5}
-        imageURL={
-          'https://cdn.shopify.com/s/files/1/0569/4858/8753/products/Utility_Green_UofMeg_161df0fd-538e-4369-b29c-eca0b7d8b336.jpg?v=1629064903'
-        }
-      />
     </>
   );
 };
