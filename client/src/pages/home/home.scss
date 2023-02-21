@@ -79,6 +79,10 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+
+  p {
+    padding-bottom: 1vh;
+  }
 }
 
 .home-about-container {

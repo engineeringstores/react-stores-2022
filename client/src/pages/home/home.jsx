@@ -16,6 +16,7 @@ import { homeAboutMessage, homeStaples, locationDesc, operationHours } from '../
 
 import Arrow from '../../assets/icons/angle-down-solid.svg';
 import LocationImg from '../../assets/images/location.svg';
+import { Button } from '../../components/button/Button';
 
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
@@ -76,17 +77,9 @@ const HomeAbout = () => {
       <div className="home-about-container">
         <h1 className="title-style">ABOUT</h1>
         <p>{homeAboutMessage}</p>
-        {/* TODO: Button Component */}
-        <div
-          style={{
-            width: '200px',
-            margin: '20px',
-            height: '50px',
-            background: '#FFFFFF',
-            border: '1px solid #A6B3DB',
-            borderRadius: '10px',
-          }}
-        ></div>
+        <Link to={'/about'}>
+          <Button text={'MEET THE TEAM'} />
+        </Link>
       </div>
     </>
   );
