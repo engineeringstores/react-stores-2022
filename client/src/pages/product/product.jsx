@@ -1,6 +1,8 @@
 import { useLocation } from 'react-router-dom';
 
-const PageCatalogue = () => {
+import { BuyButton } from '../../components/buyButton/buyButton';
+
+const PageProduct = () => {
   const location = useLocation();
 
   return (
@@ -12,8 +14,9 @@ const PageCatalogue = () => {
       >
         {location.pathname.substring(location.pathname.lastIndexOf('/') + 1)}
       </h1>
+      <BuyButton productID={location.pathname.substring(location.pathname.lastIndexOf('/') + 1)} />
     </>
   );
 };
 
-export { PageCatalogue };
+export { PageProduct };
