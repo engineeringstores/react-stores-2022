@@ -12,11 +12,14 @@ import { getProduct } from '../../state/product/saga';
 import { getCollections } from '../../state/collections/saga';
 import { getProducts } from '../../state/productCollection/saga';
 
+
 import { homeAboutMessage, homeStaples, locationDesc, operationHours } from '../../util/homeBlurb';
 
 import Arrow from '../../assets/icons/angle-down-solid.svg';
 import LocationImg from '../../assets/images/location.svg';
 import { Button } from '../../components/button/Button';
+
+import { ItemDisplay } from '../../components/itemDisplay/itemDisplay';
 
 const PageHome = () => {
   const { collections } = useSelector(collectionsSelector);
@@ -33,11 +36,11 @@ const PageHome = () => {
 
   return (
     <>
+
       <HomeHeader />
       <HomeAbout />
       <HomeStaples />
       <HomeLocation />
-
       <div style={{ backgroundColor: 'red' }}>
         {collections.map((collection) => {
           return <li key={collection.id}>{collection.title}</li>;
