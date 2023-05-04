@@ -12,6 +12,15 @@ html {
   font-family: 'Inter', sans-serif;
 }
 
+.testing {
+  // displays a square on an empty page
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
 :root {
   --white: #ffffff;
   --page-bg: #efefef;
@@ -76,7 +85,7 @@ h1 {
   color: var(--dark-purple);
   font-family: 'Lovelo-Black', sans-serif;
   padding-bottom: 30px;
-  letter-spacing: 0.23em;
+  letter-spacing: 0.15em;
 }
 
 h2 {

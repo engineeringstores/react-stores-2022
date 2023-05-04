@@ -117,8 +117,13 @@ const Navbar = () => {
                           <h3 className="navbar-link-text">{item.label.toUpperCase()}</h3>
                           <div
                             className="navbar-underline"
+                            // style={
+                            //   pathname === item.path && !shopOpen
+                            //     ? { backgroundColor: 'var(--dark-purple)' }
+                            //     : {}
+                            // }
                             style={
-                              pathname === item.path && !shopOpen
+                              pathname === item.path
                                 ? { backgroundColor: 'var(--dark-purple)' }
                                 : {}
                             }

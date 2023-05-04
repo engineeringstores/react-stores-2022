@@ -1,5 +1,7 @@
 .button {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background: var(--white);
   border: 1px solid var(--light-blue);
@@ -13,7 +15,7 @@
   line-height: 27px;
   text-align: center;
 
-  padding: 14px 30px;
+  padding: 10px 20px;
 
   transition: transform 200ms, background-color 200ms;
 
@@ -24,6 +26,11 @@
 .button:hover {
   transform: scale(102%);
   transition: transform 200ms;
+
+  background-color: var(--light-blue);
+  color: var(--white);
+
+  transition: background-color var(--transition-middling) ease-in-out;
 }
 
 .button:active {

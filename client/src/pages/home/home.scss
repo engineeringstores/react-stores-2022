@@ -3,6 +3,13 @@
   animation-name: arrow-down-animation;
   animation-iteration-count: infinite;
   animation-duration: 2500ms;
+
+  &:hover {
+    // TODO: when hovering over the arrow, translate up and pause animation
+    transform: translateY(-10px);
+    transition: transform var(--transition-speedy);
+    animation-play-state: paused;
+  }
 }
 
 .home-header-photo {
@@ -80,14 +87,12 @@
   flex-direction: column;
   text-align: center;
 
-  p {
-    padding-bottom: 1vh;
-  }
-}
-
-.home-about-container {
-  padding: 0 20%;
+  padding: 0 10%;
   padding-top: 5%;
+
+  p {
+    padding-bottom: 5%;
+  }
 }
 
 ////
