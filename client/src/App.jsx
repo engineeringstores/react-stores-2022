@@ -17,7 +17,6 @@ function App() {
 
 const TransitionRoutes = () => {
   const location = useLocation();
-
   return (
     <>
       <TransitionGroup>
@@ -25,7 +24,7 @@ const TransitionRoutes = () => {
         <ScrollToTop />
         <CSSTransition key={location.key} classNames="page" timeout={300}>
           <Routes location={location}>
-            {[...pages.main, ...pages.navbar, ...pages.hidden].map((page) => {
+            {[...pages.main, ...pages.navbar, ...pages.hidden, ...pages.staples].map((page) => {
               return (
                 <Route
                   path={page.path}

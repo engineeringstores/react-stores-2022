@@ -4,7 +4,9 @@ import { PageCollections } from '../pages/collections/collections';
 import { PageCatalogue } from '../pages/catalogue/catalogue';
 import { PageConsignment } from '../pages/consignment/consignment';
 import { PageProduct } from '../pages/product/product';
+import { PageCoveralls } from '../pages/coveralls/coveralls';
 import { PageHome } from '../pages/home/home';
+import { PageLeatherJacket } from '../pages/leatherJacket/leatherJacket';
 import { PageShop } from '../pages/shop/shop';
 //import AuthorizedPage from './AuthorizedPage';
 
@@ -25,6 +27,18 @@ export const pages = {
       component: <PageAbout />,
       path: '/about',
       includeFooter: true,
+    },
+  ],
+  staples: [
+    {
+      label: 'Leather Jacket',
+      component: <PageLeatherJacket />,
+      path: '/leather-jacket',
+    },
+    {
+      label: 'Coveralls',
+      component: <PageCoveralls />,
+      path: '/coveralls',
     },
   ],
   navbar: [
